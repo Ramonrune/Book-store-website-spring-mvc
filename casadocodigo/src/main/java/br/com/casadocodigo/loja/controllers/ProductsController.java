@@ -67,6 +67,8 @@ public class ProductsController {
 		modelAndView.addObject("product", product);
 		return modelAndView;
 	}
+	
+
 	/*
 	@InitBinder
 	protected void initBinder(WebDataBinder binder){
