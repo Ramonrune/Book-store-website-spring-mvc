@@ -35,6 +35,7 @@
 		<table class="striped">
 			<thead>
 				<tr>
+					<th>Ver</th>
 					<th>Título</th>
 					<th>Valores</th>
 				</tr>
@@ -42,6 +43,7 @@
 
 			<c:forEach items="${products}" var="product">
 				<tr>
+					<td><a href="${spring:mvcUrl('showProduct').arg(0, product.id).build() }">Ver</a></td>
 					<td>${product.title}</td>
 					<td><c:forEach items="${product.prices}" var="price">
 					[${price.value} - ${price.bookType}]
