@@ -4,6 +4,8 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -44,11 +46,12 @@
 			<tfoot>
 				<tr>
 					<td colspan="4">
-						<form action="${spring:mvcUrl('checkout').build() }"
+						<form:form action="${spring:mvcUrl('checkout').build() }"
 							method="post">
-
+							<security:csrfInput/>
+							
 							<input type="submit" name="checkout" value="Finalizar compra" />
-						</form>
+						</form:form>
 					</td>
 					<td>${shoppingCart.total }</td>
 				</tr>

@@ -5,11 +5,15 @@ import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Embeddable
 public class Price {
 
 	@Column(scale = 2)
+	@NotBlank
 	private BigDecimal value;
+	@NotBlank
 	private BookType bookType;
 	public BigDecimal getValue() {
 		return value;

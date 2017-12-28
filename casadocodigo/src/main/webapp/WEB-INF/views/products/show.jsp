@@ -34,7 +34,7 @@
 				
 				</p>
 			</div>
-			<form action="<c:url value="/shopping"/>" method="post" class="container">
+			<form:form servletRelativeAction="/shopping" method="post" class="container">
 				<input type="hidden" value="${product.id}" name="productId"/>
 				<ul id="variants" class="clearfix">
 					<c:forEach items="${product.prices}" var="price">
@@ -60,7 +60,7 @@
 					alt="Compre agora"
 					title="Compre agora '${product.title}'!" value="Comprar"/>
 
-			</form>
+			</form:form>
 	</div>
 
 
