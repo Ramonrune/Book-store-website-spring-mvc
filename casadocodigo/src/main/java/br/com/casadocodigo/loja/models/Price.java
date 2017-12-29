@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -11,10 +14,14 @@ import org.hibernate.validator.constraints.NotBlank;
 public class Price {
 
 	@Column(scale = 2)
-	@NotBlank
+	@NotNull
+	@Min(0)
+	@Max(400)
 	private BigDecimal value;
-	@NotBlank
+	@NotNull
 	private BookType bookType;
+	
+	
 	public BigDecimal getValue() {
 		return value;
 	}

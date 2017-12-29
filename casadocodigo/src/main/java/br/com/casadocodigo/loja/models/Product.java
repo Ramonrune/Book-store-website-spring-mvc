@@ -10,7 +10,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -31,8 +34,10 @@ public class Product {
 	@Min(30)
 	private int pages;
 	@ElementCollection
+	@Valid
 	private List<Price> prices = new ArrayList<Price>();
 	@DateTimeFormat(iso = ISO.DATE)
+	@NotNull
 	private Calendar releaseDate;
 	private String summaryPath;
 	
