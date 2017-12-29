@@ -4,24 +4,18 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="security"%>
+<%@ taglib prefix="customTags" tagdir="/WEB-INF/tags"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Itens</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<!--Import materialize.css-->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-</head>
-<body>
+<customTags:page bodyClass="" title="">
+
+	<jsp:body>
+
 	<div class="container">
 
 		<h1>Seu carrinho de compras!</h1>
-		<table  class="striped">
+		<table class="striped">
 			<thead>
 				<tr>
 					<th>Item</th>
@@ -47,8 +41,8 @@
 				<tr>
 					<td colspan="4">
 						<form:form action="${spring:mvcUrl('checkout').build() }"
-							method="post">
-							<security:csrfInput/>
+								method="post">
+							<security:csrfInput />
 							
 							<input type="submit" name="checkout" value="Finalizar compra" />
 						</form:form>
@@ -60,6 +54,5 @@
 		</table>
 
 	</div>
-
-</body>
-</html>
+</jsp:body>
+</customTags:page>

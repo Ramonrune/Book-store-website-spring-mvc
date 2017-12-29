@@ -3,28 +3,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="security"%>
+<%@ taglib prefix="customTags" tagdir="/WEB-INF/tags"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro de Produtos</title>
-<!--Import Google Icon Font-->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<!--Import materialize.css-->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<customTags:page bodyClass="" title="">
 
-
-<!--Let browser know website is optimized for mobile-->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
+	<jsp:body>
 
 	<div class="container">
-		<a href="${spring:mvcUrl('listProduct').build()}" class="waves-effect waves-light btn">Lista</a>
+		<a href="${spring:mvcUrl('listProduct').build()}"
+				class="waves-effect waves-light btn">Lista</a>
 
 	<!-- 
 		<spring:hasBindErrors name="product">
@@ -37,8 +26,8 @@
 	-->
 
 		<form:form action="${spring:mvcUrl('saveProduct').build()}"
-			method="post" commandName="product" enctype="multipart/form-data">
-			<security:csrfInput/>
+				method="post" commandName="product" enctype="multipart/form-data">
+			<security:csrfInput />
 			<div>
 				<label for="title">Título</label>
 				<form:input path="title" />
@@ -50,7 +39,7 @@
 			<div>
 				<label for="description">Descrição</label>
 				<form:textarea rows="10" cols="20" path="description"
-					class="materialize-textarea" />
+						class="materialize-textarea" />
 
 				<form:errors path="description" />
 
@@ -86,28 +75,21 @@
 			<c:forEach items="${types}" var="bookType" varStatus="status">
 				<div>
 					<label for="price_${bookType}">${bookType}</label> <input
-						type="text" name="prices[${ status.index}].value"
-						id="price_${ bookType }"> <input type="hidden"
-						name="prices[${status.index }].bookType" value="${bookType }">
+							type="text" name="prices[${ status.index}].value"
+							id="price_${ bookType }"> <input type="hidden"
+							name="prices[${status.index }].bookType" value="${bookType }">
+						
 				</div>
-
+				
 			</c:forEach>
 
 			<div>
 				<input type="submit" value="Enviar"
-					class="waves-effect waves-light btn" style="padding-top: 7px;">
+						class="waves-effect waves-light btn" >
 			</div>
 		</form:form>
 
 
 	</div>
-
-
-
-</body>
-
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-</html>
+</jsp:body>
+</customTags:page>
