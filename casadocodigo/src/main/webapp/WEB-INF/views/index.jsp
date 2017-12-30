@@ -4,24 +4,30 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="customTags"%>
-
+<%@ taglib prefix="security"
+	uri="http://www.springframework.org/security/tags"%>
 <customTags:page bodyClass="" title="">
 
 	<div class="container">
-		<h1>Seja bem-vindo a loja de livros!</h1>
+		<h2>Seja bem-vindo
+		<security:authorize access="isAuthenticated()">
+			<security:authentication property="principal" var="user" />
+		${user.name}
+		</security:authorize>
+		 a loja de livros!
+		</h2>
 		<div class="row">
 
 			<c:forEach items="${products }" var="product">
-				<div class="col s12 m6">
+				<div class="col s12 m4 l4">
 					<div class="card">
 						<div class="card-image">
-							<img src="http://materializecss.com/images/sample-1.jpg">  <a
+							<img src="${product.summaryPath }" width="50%">  <a href="${spring:mvcUrl('showProduct').arg(0, product.id).build() }"
 								class="btn-floating halfway-fab waves-effect waves-light red"><i
 								class="material-icons">add</i></a>
 						</div>
 						<div class="card-content">
 						<span class="card-title">${product.title }</span>
-							<p>${product.description }</p>
 						</div>
 					</div>
 				</div>

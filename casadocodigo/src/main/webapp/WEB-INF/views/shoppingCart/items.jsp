@@ -18,6 +18,7 @@
 		<table class="striped">
 			<thead>
 				<tr>
+					<th width="20%">Imagem</th>
 					<th>Item</th>
 					<th>Tipo</th>
 					<th>Preço</th>
@@ -28,31 +29,33 @@
 			<tbody>
 				<c:forEach items="${shoppingCart.list}" var="item">
 					<tr>
+						<td><img src="${item.product.summaryPath }" width="50%"/></td>
 						<td>${item.product.title }</td>
 						<td>${item.bookType }</td>
-						<td>${item.price }</td>
+						<td>R$ ${item.price }</td>
 						<td>${shoppingCart.getQuantity(item)}</td>
-						<td>${shoppingCart.getTotal(item) }</td>
+						<td>R$ ${shoppingCart.getTotal(item) }</td>
 					</tr>
 
 				</c:forEach>
 			</tbody>
 			<tfoot>
 				<tr>
-					<td colspan="4">
+					<td colspan="5">
 						<form:form action="${spring:mvcUrl('checkout').build() }"
 								method="post">
 							<security:csrfInput />
 							
-							<input type="submit" name="checkout" value="Finalizar compra" />
+							<input type="submit" class="waves-effect waves-light btn" style="padding-top: 8px;" name="checkout" value="Finalizar compra" />
 						</form:form>
 					</td>
-					<td>${shoppingCart.total }</td>
+					<td>R$ ${shoppingCart.total }</td>
 				</tr>
 			</tfoot>
 
 		</table>
 
 	</div>
+	<br><br><br><br><br><br><br><br>
 </jsp:body>
 </customTags:page>

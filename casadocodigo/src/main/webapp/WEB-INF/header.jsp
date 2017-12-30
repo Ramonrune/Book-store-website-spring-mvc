@@ -13,10 +13,18 @@
 
 
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
+		
+			<li><a href="${spring:mvcUrl('home').build()}">Início</a></li>
+			
 			<li><a href="${spring:mvcUrl('listProduct').build()}">Lista
 					de Livros</a></li>
-			<li><a href="${spring:mvcUrl('formProduct').build()}">Novo
-					Livro</a></li>
+			<security:authorize access="hasRole('ROLE_ADMIN')">
+				<li><a href="${spring:mvcUrl('formProduct').build()}">Novo
+						Livro</a></li>
+
+
+			</security:authorize>
+
 			<li><a href="${spring:mvcUrl('SCC#items').build()}"
 				rel="nofollow">Seu carrinho (${shoppingCart.quantity}) </a></li>
 
@@ -25,10 +33,10 @@
 				<li><a href="<c:url value="/logout"/>" rel="nofollow">Logout</a></li>
 
 			</security:authorize>
-			
-				<security:authorize access="!isAuthenticated()">
+
+			<security:authorize access="!isAuthenticated()">
 				<security:authentication property="principal" var="user" />
-			<li><a href="${spring:mvcUrl('login').build()}" rel="nofollow">Login</a></li>
+				<li><a href="${spring:mvcUrl('logout').build()}" rel="nofollow">Login</a></li>
 
 			</security:authorize>
 

@@ -1,6 +1,7 @@
 package br.com.casadocodigo.loja.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,6 +17,7 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/", name = "home")
+	@Cacheable("mainBooks")
 	public ModelAndView index(){
 		ModelAndView modelAndView = new ModelAndView("index");
 		modelAndView.addObject("products", productDAO.list());	

@@ -9,46 +9,54 @@
 	<jsp:body>
 
 	<div class="container">
-		<a href="${spring:mvcUrl('SCC#items').build()}" rel="nofollow">Seu carrinho (${shoppingCart.quantity}) </a>
-		<div>
 			
-				<h1 class="product-title" itemprop="name">${product.title}</h1>
-			
-
-				<p itemprop="description" class="book-description">
-				${product.description}
-				
-				</p>
+		<h1 class="product-title" itemprop="name">${product.title}</h1>
+		
+		<div class="row">
+			<div class="col s12 m6 l6">
+				<img src="${product.summaryPath }" width="100%" />
 			</div>
-			<form:form servletRelativeAction="/shopping" method="post"
-				class="container">
+			
+			<div class="col s12 m6 l6">
+			<form:form servletRelativeAction="/shopping" method="post">
 				<input type="hidden" value="${product.id}" name="productId" />
-				<ul id="variants" class="clearfix">
 					<c:forEach items="${product.prices}" var="price">
-						<li class="buy-option">
+						<div class="col s12 m4 l4 card">
+							<i class="large material-icons">book</i>
 							
-							<input type="radio" name="bookType" class="variant-radio"
-							id="${product.id}-${price.bookType}" value="${price.bookType}"
-							${price.bookType.name() == 'COMBO' ? 'checked' : ''}>
+							<input type="radio" name="bookType"
+									id="${product.id}-${price.bookType}" value="${price.bookType}"
+									${price.bookType.name() == 'COMBO' ? 'checked' : ''}>
 							 
-							<label class="variant-label"
-							for="${product.id}-${price.bookType}"> 
+							<label for="${product.id}-${price.bookType}"> 
 								${price.bookType}								
 							</label> 
-							<p class="variant-price">${price.value}</p>
-						</li>
+							<br>
+							R$ ${price.value}
+						</div>
 					</c:forEach>
 
 
 
-
-				</ul>
+			<br><br><br>
 
 				<input type="submit" class="waves-effect waves-light btn"
-					alt="Compre agora" title="Compre agora '${product.title}'!"
-					value="Comprar" />
+							alt="Compre agora" title="Compre agora '${product.title}'!"
+							value="Comprar" style="padding-top: 8px;float:right;" />
 
 			</form:form>
+			
+			</div>
+		</div>	
+		
+			
+			
+		<h2>Conteúdo</h2>
+		<p>
+		${product.description}
+				
+		</p>
+			
 	</div>
 	</jsp:body>
 

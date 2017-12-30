@@ -18,10 +18,7 @@
 	<jsp:body>
 	<div class="container">
 
-		<security:authorize access="isAuthenticated()">
-			<security:authentication property="principal" var="user" />
-		Olá ${ user.name}
-		</security:authorize>
+		
 
 		<br> <br>
 		<security:authorize access="hasRole('ROLE_ADMIN')">
@@ -41,6 +38,7 @@
 			<thead>
 				<tr>
 					<th>Ver</th>
+					<th width="20%">Imagem</th>
 					<th>Título</th>
 					<th>Valores</th>
 				</tr>
@@ -49,16 +47,21 @@
 			<c:forEach items="${products}" var="product">
 				<tr>
 					<td><a
-							href="${spring:mvcUrl('showProduct').arg(0, product.id).build() }">Ver</a></td>
+							href="${spring:mvcUrl('showProduct').arg(0, product.id).build() }"><i
+								class="material-icons">search</i></a></td>
+					<td><img src="${product.summaryPath}" width="40%"></td>
 					<td>${product.title}</td>
 					<td><c:forEach items="${product.prices}" var="price">
-					[${price.value} - ${price.bookType}]
+					R$ ${price.value} - ${price.bookType}
+					<br>
 					</c:forEach></td>
 				</tr>
 			</c:forEach>
 		</table>
 
 	</div>
+	
+	<br><br><br><br>
 	</jsp:body>
 
 
