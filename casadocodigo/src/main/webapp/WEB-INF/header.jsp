@@ -9,24 +9,25 @@
 			style="padding: 5px;"><img
 			src="https://freeiconshop.com/wp-content/uploads/edd/book-open-flat.png"
 			width="50px"></a>
-
+		
 
 
 		<ul id="nav-mobile" class="right hide-on-med-and-down">
 		
-			<li><a href="${spring:mvcUrl('home').build()}">Início</a></li>
+			<li><a href='<c:url value="/?locale=pt" />'>Portugues</a></li>
+			<li><a href='<c:url value="/?locale=en_US" />'>Ingles</a></li>
 			
-			<li><a href="${spring:mvcUrl('listProduct').build()}">Lista
-					de Livros</a></li>
+			<li><a href="${spring:mvcUrl('home').build()}"><spring:message code="navigation.home"/></a></li>
+			
+			<li><a href="${spring:mvcUrl('listProduct').build()}"><spring:message code="navigation.listBooks"/></a></li>
 			<security:authorize access="hasRole('ROLE_ADMIN')">
-				<li><a href="${spring:mvcUrl('formProduct').build()}">Novo
-						Livro</a></li>
+				<li><a href="${spring:mvcUrl('formProduct').build()}"><spring:message code="navigation.newBook"/></a></li>
 
 
 			</security:authorize>
 
 			<li><a href="${spring:mvcUrl('SCC#items').build()}"
-				rel="nofollow">Seu carrinho (${shoppingCart.quantity}) </a></li>
+				rel="nofollow"><spring:message code="navigation.cart"/> (${shoppingCart.quantity}) </a></li>
 
 			<security:authorize access="isAuthenticated()">
 				<security:authentication property="principal" var="user" />
@@ -36,7 +37,7 @@
 
 			<security:authorize access="!isAuthenticated()">
 				<security:authentication property="principal" var="user" />
-				<li><a href="${spring:mvcUrl('logout').build()}" rel="nofollow">Login</a></li>
+				<li><a href="${spring:mvcUrl('login').build()}" rel="nofollow">Login</a></li>
 
 			</security:authorize>
 

@@ -21,26 +21,20 @@
 		
 
 		<br> <br>
-		<security:authorize access="hasRole('ROLE_ADMIN')">
-			<a href="${spring:mvcUrl('formProduct').build()}"
-					class="waves-effect waves-light btn">Novo Livro</a>
-			<br>
-			<br>
-
-		</security:authorize>
+		
 
 
 		<div class="chip">
-			Lista carregada com sucesso! ${sucesso } <i
+			<spring:message code="listofbooks.listloaded"/>! ${sucesso } <i
 					class="close material-icons">close</i>
 		</div>
 		<table class="striped">
 			<thead>
 				<tr>
-					<th>Ver</th>
-					<th width="20%">Imagem</th>
-					<th>Título</th>
-					<th>Valores</th>
+					<th><spring:message code="booklist.see"/></th>
+					<th width="20%"><spring:message code="booklist.image"/></th>
+					<th><spring:message code="booklist.title"/></th>
+					<th><spring:message code="booklist.value"/></th>
 				</tr>
 			</thead>
 

@@ -26,14 +26,14 @@
 		</spring:hasBindErrors>
 	-->
 
-		<h1>Novo Livro</h1>
+		<h1><spring:message code="newbook.title"/></h1>
 		<form:form action="${spring:mvcUrl('saveProduct').build()}"
 				method="post" commandName="product" enctype="multipart/form-data">
 			<div class="input-field">
 			    <i class="material-icons prefix">book</i>
 			
 				<form:input path="title" class="validate" id="icon_prefix" />
-				<label for="icon_prefix">Título</label>
+				<label for="icon_prefix"><spring:message code="newbook.form.title"/></label>
 				
 				<form:errors path="title" class = "chip" style="background:red; color:#fff;" />
 
@@ -44,7 +44,7 @@
 			
 				<form:textarea rows="10" cols="20" path="description"
 						class="materialize-textarea" />
-				<label for="description">Descrição</label>
+				<label for="description"><spring:message code="newbook.form.description"/></label>
 						
 
 				<form:errors path="description" class = "chip" style="background:red; color:#fff;" />
@@ -55,7 +55,7 @@
 				 <i class="material-icons prefix">format_list_numbered</i>
 
 				<form:input path="pages" type="number" />
-				<label for="pages">Número de paginas</label>
+				<label for="pages"><spring:message code="newbook.form.pagenumber"/></label>
 				
 
 				<form:errors path="pages" class = "chip" style="background:red; color:#fff;" />
@@ -76,7 +76,7 @@
 			<i class="material-icons prefix">image</i>
 			
 		      <div class="btn" style="margin-left:44px;">
-		        <span>File</span>
+		        <span><spring:message code="newbook.form.file"/></span>
 				<input type="file" name="summary" />
 		      </div>
 		      <div class="file-path-wrapper">
@@ -116,7 +116,7 @@
 			
 
 			<div style="float: right;">
-				<input type="submit" value="Enviar"
+				<input type="submit" value="<spring:message code="newbook.form.send"/>"
 						class="waves-effect waves-light btn" style="padding-top: 9px;">
 			</div>
 			<br>

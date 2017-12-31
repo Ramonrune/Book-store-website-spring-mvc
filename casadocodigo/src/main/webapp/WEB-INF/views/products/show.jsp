@@ -40,9 +40,10 @@
 
 			<br><br><br>
 
+
 				<input type="submit" class="waves-effect waves-light btn"
-							alt="Compre agora" title="Compre agora '${product.title}'!"
-							value="Comprar" style="padding-top: 8px;float:right;" />
+							alt="<spring:message code="items.buy"/>" title="<spring:message code="items.buy"/> '${product.title}'!"
+							value=<spring:message code="items.buy"/> style="padding-top: 8px;float:right;" />
 
 			</form:form>
 			
@@ -51,7 +52,6 @@
 		
 			
 			
-		<h2>Conteúdo</h2>
 		<p>
 		${product.description}
 				

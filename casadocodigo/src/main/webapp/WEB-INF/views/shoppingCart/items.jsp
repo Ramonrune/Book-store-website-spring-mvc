@@ -14,16 +14,18 @@
 
 	<div class="container">
 
-		<h1>Seu carrinho de compras!</h1>
+		<h1>
+		<spring:message code="cart.title"/>
+		</h1>
 		<table class="striped">
 			<thead>
 				<tr>
-					<th width="20%">Imagem</th>
-					<th>Item</th>
-					<th>Tipo</th>
-					<th>Preço</th>
-					<th>Quantidade</th>
-					<th>Total</th>
+					<th width="20%"><spring:message code="cart.form.image"/></th>
+					<th><spring:message code="cart.form.item"/></th>
+					<th><spring:message code="cart.form.type"/></th>
+					<th><spring:message code="cart.form.value"/></th>
+					<th><spring:message code="cart.form.quantity"/></th>
+					<th><spring:message code="cart.form.total"/></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,7 +48,7 @@
 								method="post">
 							<security:csrfInput />
 							
-							<input type="submit" class="waves-effect waves-light btn" style="padding-top: 8px;" name="checkout" value="Finalizar compra" />
+							<input type="submit" class="waves-effect waves-light btn" style="padding-top: 8px;" name="checkout" value="<spring:message code="cart.form.finalize"/>" />
 						</form:form>
 					</td>
 					<td>R$ ${shoppingCart.total }</td>

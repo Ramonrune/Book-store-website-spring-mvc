@@ -50,7 +50,9 @@ body {
       <img class="responsive-img" style="width: 100px;" src="http://www.pvhc.net/img82/fumzgpczkruvxbourmry.png" />
       <div class="section"></div>
 
-      <h5 class="indigo-text">Por favor, faça login com sua conta</h5>
+      <h5 class="indigo-text">
+      <spring:message code="login.title"/>
+      </h5>
       <div class="section"></div>
 
       <div class="container">
@@ -65,17 +67,26 @@ body {
             <div class='row'>
               <div class='input-field col s12'>
                 <input class='validate' type='text' name='username' id='username' />
-                <label for='username'>Entre com seu login</label>
+                <label for='username'>
+                      <spring:message code="login.login"/>
+                
+                </label>
               </div>
             </div>
 
             <div class='row'>
               <div class='input-field col s12'>
                 <input class='validate' type='password' name='password' id='password' />
-                <label for='password'>Entre com sua senha</label>
+                <label for='password'>
+                     <spring:message code="login.password"/>
+                
+                </label>
               </div>
               <label style='float: right;'>
-								<a class='pink-text' href='#!'><b>Esqueceu sua senha?</b></a>
+								<a class='pink-text' href='#!'><b>
+								      <spring:message code="login.lostyourpassword"/>
+								
+								</b></a>
 							</label>
             </div>
 
