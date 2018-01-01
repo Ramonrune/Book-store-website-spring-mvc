@@ -16,6 +16,7 @@
 			</security:authorize>
 
 		</h2>
+		<b>Para testar: <br>ramonrune@gmail.com : admin (conta admin)<br>usercomprador@gmail.com : admin (conta padrão)</b>
 		<div class="row">
 
 			<c:forEach items="${products }" var="product">

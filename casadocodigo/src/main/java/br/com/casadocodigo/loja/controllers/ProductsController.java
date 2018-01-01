@@ -56,7 +56,8 @@ public class ProductsController {
 		
 		
 		
-		String webPath = fileSaver.write("/WEB-INF/uploaded-images", summary);
+		String webPath = fileSaver.write("resources/uploaded-images", summary);
+		System.out.println(webPath);
 		product.setSummaryPath(webPath);
 		productDAO.save(product);
 		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
