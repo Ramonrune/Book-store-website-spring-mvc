@@ -29,7 +29,7 @@ public class IntegrandoComPagamento implements Runnable {
 		String uriToPay = "http://book-payment.herokuapp.com/payment";
 		try {
 			String response = restTemplate.postForObject(uriToPay, new PaymentData(value), String.class);
-			result.setResult("redirect:/payment/success");
+			result.setResult("redirect:/");
 		} catch (HttpClientErrorException exception) {
 			result.setResult("redirect:/payment/error");
 		}
