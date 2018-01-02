@@ -33,7 +33,7 @@ Books are divided in three main categories:
 Every book has a quantity of pages, photo, title, description and a release date.
 
 ## Prerequisites
-*MySQL and Java 8 installed
+MySQL and Java 8 installed
 
 
 ## License
