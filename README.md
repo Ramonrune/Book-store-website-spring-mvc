@@ -2,15 +2,16 @@
 
 ## Built With
 Book store using spring mvc and hibernate.
-*Java
-*Spring MVC
-*Hibernate and JPA
-*AWS S3 (s3 ninja)
-*MySQL
-*Guava for caching
-*Async transactions for scalability
-*Maven
-*Materialize for front-end
+<br>
+*Java<br>
+*Spring MVC<br>
+*Hibernate and JPA<br>
+*AWS S3 (s3 ninja)<br>
+*MySQL<br>
+*Guava for caching<br>
+*Async transactions for scalability<br>
+*Maven<br>
+*Materialize for front-end<br>
 
 
 ## Description
