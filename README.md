@@ -64,7 +64,7 @@ Note: project is using port 3307, default is 3306 for mysql.<br>
 10. Run it on tomcat 8.0<br>
 
 ## Structure of directories
-
+```
 |
 |---casadocodigo
 |------|-------.settings
@@ -121,7 +121,7 @@ Note: project is using port 3307, default is 3306 for mysql.<br>
 |------|--------.project
 |------|--------pom.xml
 |
-
+```
 
 
 
