@@ -44,7 +44,7 @@ MySQL and Java 8 installed
 |<br>
 |---casadocodigo ---------------- main project, uses spring mvc<br>
 |---casadocodigospringboot ------ side project, sample using spring boot<br>
-<br>
+
 1. Download project.<br>
 2. Download s3 ninja. https://s3ninja.net/<br>
 3. Run s3 ninja: 
@@ -53,7 +53,7 @@ cd your-directory-s3-ninja
 java IPL
 ```
 Now you are running s3 ninja simulatting amazon s3 on port 9444.<br>
-4. Create a bucket called casadocodigo.
+4. Create a bucket called casadocodigo.<br>
 Go to localhost:9444 and create the bucket<br>
 5. Import project in eclipse as maven project<br>
 6. Run maven update<br>
