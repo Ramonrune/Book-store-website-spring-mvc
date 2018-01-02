@@ -15,21 +15,21 @@ Book store using spring mvc and hibernate.
 
 
 ## Description
-Some functionalities:
-*Login
-*Logout
-*List books
-*Add new books
-*List users
-*Add books to shopping cart
-*Finalize purchase
-*List specific books
+Some functionalities:<br>
+*Login<br>
+*Logout<br>
+*List books<br>
+*Add new books<br>
+*List users<br>
+*Add books to shopping cart<br>
+*Finalize purchase<br>
+*List specific books<br>
 
 
-Books are divided in three main categories:
-*E-books
-*Printed
-*Combo (E-books + Printed).
+Books are divided in three main categories:<br>
+*E-books<br>
+*Printed<br>
+*Combo (E-books + Printed).<br>
 
 Every book has a quantity of pages, photo, title, description and a release date.
 
