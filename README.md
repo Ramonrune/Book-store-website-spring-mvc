@@ -53,9 +53,8 @@ java IPL<br>
 Now you are running s3 ninja simulatting amazon s3 on port 9444.<br>
 4. Import project in eclipse as maven project<br>
 5. Run maven update<br>
-6. Configure your settings in JPAConfiguration class inside conf package.<br>
-Note: project is using port 3307, default is 3306 for mysql.
-<br>
+6. Configure your settings in JPAConfiguration class inside conf package.
+Note: project is using port 3307, default is 3306 for mysql.<br>
 7. Do any other configuration that you would like<br>
 8. Run it on tomcat 8.0<br>
 
