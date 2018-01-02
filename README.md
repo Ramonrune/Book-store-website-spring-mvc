@@ -47,7 +47,7 @@ MySQL and Java 8 installed
 <br>
 1. Download project.<br>
 2. Download s3 ninja. https://s3ninja.net/<br>
-3. Run s3 ninja: <br>
+3. Run s3 ninja: 
 ```
 cd your-directory-s3-ninja
 java IPL
