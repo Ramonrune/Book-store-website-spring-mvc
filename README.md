@@ -145,6 +145,17 @@ Note: project is using port 3307, default is 3306 for mysql.<br>
 |
 ```
 
+Description about directories:
+<br>
+conf: General configurations, like servlet, amazon, security, web configurations, local, email, and others<br>
+controllers: All controllers used.<br>
+daos: All Daos used<br>
+infra: Code for file save<br>
+models: Class models<br>
+service: payment integration<br>
+validator: validation <br>
+viewresolver: Json view<br>
+
 
 
 
