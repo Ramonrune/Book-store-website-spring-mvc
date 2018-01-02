@@ -49,8 +49,8 @@ MySQL and Java 8 installed
 2. Download s3 ninja. https://s3ninja.net/<br>
 3. Run s3 ninja: <br>
 ```
-cd your-directory-s3-ninja<br>
-java IPL<br>
+cd your-directory-s3-ninja
+java IPL
 ```
 Now you are running s3 ninja simulatting amazon s3 on port 9444.<br>
 4. Import project in eclipse as maven project<br>
