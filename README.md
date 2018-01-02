@@ -53,13 +53,15 @@ cd your-directory-s3-ninja
 java IPL
 ```
 Now you are running s3 ninja simulatting amazon s3 on port 9444.<br>
-4. Import project in eclipse as maven project<br>
-5. Run maven update<br>
-6. Configure your settings in JPAConfiguration class inside conf package.
+4. Create a bucket called casadocodigo.
+Go to localhost:9444 and create the bucket<br>
+5. Import project in eclipse as maven project<br>
+6. Run maven update<br>
+7. Configure your settings in JPAConfiguration class inside conf package.
 Note: project is using port 3307, default is 3306 for mysql.<br>
-7. Do any other configuration that you would like<br>
-8. Run mysql server
-9. Run it on tomcat 8.0<br>
+8. Do any other configuration that you would like<br>
+9. Run mysql server
+10. Run it on tomcat 8.0<br>
 
 
 
