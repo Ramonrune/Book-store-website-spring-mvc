@@ -12,6 +12,7 @@ Book store using spring mvc and hibernate.
 *Async transactions for scalability<br>
 *Maven<br>
 *Materialize for front-end<br>
+*Tomcat 8.0
 
 
 ## Description
@@ -33,8 +34,33 @@ Books are divided in three main categories:<br>
 
 Every book has a quantity of pages, photo, title, description and a release date.
 
+<br><br>
+
 ## Prerequisites
 MySQL and Java 8 installed
+
+
+## Getting started
+|<br>
+|---casadocodigo ---------------- main project, uses spring mvc<br>
+|---casadocodigospringboot ------ side project, sample using spring boot<br>
+<br>
+1. Download project.<br>
+2. Download s3 ninja. https://s3ninja.net/<br>
+3. Run s3 ninja: <br>
+cd your-directory-s3-ninja<br>
+java IPL<br>
+Now you are running s3 ninja simulatting amazon s3 on port 9444.<br>
+4. Import project in eclipse as maven project<br>
+5. Run maven update<br>
+6. Configure your settings in JPAConfiguration class inside conf package.<br>
+Note: project is using port 3307, default is 3306 for mysql.
+<br>
+7. Do any other configuration that you would like
+8. Run it on tomcat 8.0
+
+
+
 
 
 ## License
